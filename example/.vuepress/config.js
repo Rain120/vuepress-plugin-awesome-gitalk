@@ -19,7 +19,7 @@ module.exports = {
         }
       ],
     ],
-    base: '/vuepress-plugin-awesome-gitalk/',
+    base: './vuepress-plugin-awesome-gitalk/dist/',
     title: 'Vuepress Plugin with Gitalk',
     head: [
       [
