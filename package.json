@@ -1,0 +1,80 @@
+{
+  "name": "vuepress-plugin-awesome-gitalk",
+  "version": "0.0.1",
+  "description": "Vuepress plugin with Gitalk",
+  "main": "src/index.js",
+  "keywords": [
+    "gitalk",
+    "plugin",
+    "vuepress",
+    "awesome-gitalk",
+    "vuepress-plugin",
+    "vuepress-plugin-awesome-gitalk"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": {
+    "name": "Rain120",
+    "url": "https://github.com/Rain120"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rain120/vuepress-plugin-awesome-gitalk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rain120/vuepress-plugin-awesome-gitalk/issues"
+  },
+  "homepage": "https://github.com/Rain120/vuepress-plugin-awesome-gitalk",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "rm -rf lib/* & rollup --config rollup.config.js",
+    "clean": "rimraf lib/*",
+    "clean:dist": "rm -rf dist/*",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "lint-staged": "lint-staged",
+    "example": "vuepress dev example",
+    "example:build": "npm run clean:dist && vuepress build example"
+  },
+  "lint-staged": {
+    "{src}/**/*.{js}": [
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "npm run changelog",
+        "lint-staged"
+      ],
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "conventional-changelog-cli": "^2.0.31",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.2.0"
+  },
+  "dependencies": {
+    "gitalk": "^1.6.0",
+    "lodash.defaultsdeep": "^4.6.1"
+  },
+  "peerDependencies": {
+    "gitalk": "^1.6.0",
+    "lodash.defaultsdeep": "^4.6.1"
+  }
+}
