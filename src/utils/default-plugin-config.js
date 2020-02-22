@@ -11,7 +11,10 @@ module.exports = {
   maxRetryCount: 5,
   // 默认是检查时间
   defaultCheckMinutes: 500,
-  home: true,
+  // 是否开启首页评论
+  home: false,
+  // 关闭 Gitalk 评论页面, eg: /docs/
+  ignorePaths: ['/'],
   // gitalk 配置
   gitalk: {
     language: "zh-CN"

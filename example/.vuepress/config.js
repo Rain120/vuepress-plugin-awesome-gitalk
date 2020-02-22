@@ -7,7 +7,7 @@ module.exports = {
         gitalk, {
           enable: true,
           log: true,
-          home: true,
+          home: false,
           gitalk: {
             clientID: 'e743112631c04b57abf7',
             clientSecret: '2363ef1edc6b74a4675b9563b745b603ce6b943c',
@@ -32,13 +32,13 @@ module.exports = {
           content: 'HttpOnly;Secure;SameSite=None',
         }
       ],
-      ['link', { rel: 'icon', href: '../../shotscreen/talk.png' }],
+      ['link', { rel: 'icon', href: '/logo.png' }],
     ],
     dest: 'dist/',
     configureWebpack: {
       resolve: {
           alias: {
-            '@images': path.join(__dirname, '..'),
+            '@images': path.join(__dirname, '../../'),
           }
       }
     },

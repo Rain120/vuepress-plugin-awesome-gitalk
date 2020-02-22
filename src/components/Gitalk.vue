@@ -15,6 +15,7 @@ export default {
         root: this.pluginConfig.root,
         maxRetryCount: this.pluginConfig.maxRetryCount,
         defaultCheckMinutes: this.pluginConfig.defaultCheckMinutes,
+        ignorePaths: this.pluginConfig.ignorePaths,
       };
     }
   },
@@ -22,6 +23,7 @@ export default {
     this.root = this.pluginConfig.root;
     this.maxRetryCount = this.pluginConfig.maxRetryCount;
     this.defaultCheckMinutes = this.pluginConfig.defaultCheckMinutes;
+    this.ignorePaths = this.pluginConfig.ignorePaths;
   },
   mounted() {
     if (!this.pluginConfig.enable) {
@@ -35,7 +37,12 @@ export default {
     });
     this.$router.afterEach((to, from) => {
       this.$nextTick(function() {
-        if (to.path != from.path) {
+        const shouldIgnore = !this.ignorePaths.some(path => new RegExp(path).test(to.path))
+        if (shouldIgnore) {
+          console.log(`😭😭😭 The path of ${to.path} should ignore`);
+          console.log(`😭😭😭 The ignore path ${JSON.stringify(this.ignorePaths)} includes ${to.path}`)
+        }
+        if (!shouldIgnore && to.path !== from.path) {
           this.initGitalk(to);
         }
       });

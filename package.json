@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-awesome-gitalk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vuepress plugin with Gitalk",
   "main": "src/index.js",
   "keywords": [

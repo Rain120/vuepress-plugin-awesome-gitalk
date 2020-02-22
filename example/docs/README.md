@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://github.com/Rain120/vuepress-plugin-awesome-gitalk">Vuepress Plugin Awesome Gitalk</a>
-  <img src='./shotscreen/talk.png' alt='talk' width='100%' height='30%' />
+  <img src='@images/shotscreen/talk.png' alt='talk' width='100%' height='30%' />
 </h3>
 
 <div align="center">
@@ -19,13 +19,13 @@
 
 Welcome to the vuepress plugin with gitalk.
 
-#### 🎮 TL;DR
+## 🎮 TL;DR
 
 ⌨️ How to use it, 👇
 
-#### 🔨 Usage
+## 🔨 Usage
 
-##### Node
+### Npm
 
 ```md
 npm install vuepress-plugin-awesome-gitalk --save
@@ -37,9 +37,9 @@ yarn add vuepress-plugin-awesome-gitalk
 
 `Setting with your account`
 
-![gitalk-setting-1.png](./shotscreen/gitalk-setting-1.png)
+![gitalk-setting-1.png](@images/shotscreen/gitalk-setting-1.png)
 
-![gitalk-setting-2.png](./shotscreen/gitalk-setting-2.png)
+![gitalk-setting-2.png](@images/shotscreen/gitalk-setting-2.png)
 
 `.vuepress/config.js`
 
@@ -54,7 +54,7 @@ module.exports = {
         gitalk: {
           clientID: 'your clientID',
           clientSecret: 'your clientSecret',
-          repo: 'your repo name',
+          repo: 'your repo',
           owner: 'your owner',
           admin: ['your admin'],
           language: 'zh-CN',
@@ -65,17 +65,18 @@ module.exports = {
 }
 ```
 
-<!-- ##### CDN
+<!-- ### CDN
 
 ```md
 <script src="https://cdn.jsdelivr.net/npm/vuepress-plugin-awesome-gitalk@0.0.2/lib/vuepress-plugin-awesome-gitalk.min.js"></script>
 ``` -->
 
-#### 🤝 Contributing ![PR](https://img.shields.io/badge/PRs-Welcome-orange?style=flat-square&logo=appveyor)
+## 🤝 Contributing
+[![PR](https://img.shields.io/badge/PRs-Welcome-orange?style=flat-square&logo=appveyor)](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/pulls)
 
 We welcome all contributions. You can submit any ideas as [pull requests](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/pulls) or as a GitHub [issue](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/issues).
 
-#### 🔗 Links
+## 🔗 Links
 
 [Docs & Demo](https://rain120.github.io/vuepress-plugin-awesome-gitalk/dist/)
 
@@ -83,7 +84,7 @@ We welcome all contributions. You can submit any ideas as [pull requests](https:
 
 [CDN Package](https://www.jsdelivr.com/package/npm/vuepress-plugin-awesome-gitalk)
 
-#### 👨‍🏭 Author
+## 👨‍🏭 Author
 
 > Front-End development engineer, technology stack: React + Typescript + Mobx, also used Vue + Vuex for a while
 
