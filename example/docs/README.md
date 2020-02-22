@@ -78,7 +78,7 @@ We welcome all contributions. You can submit any ideas as [pull requests](https:
 
 ## 🔗 Links
 
-[Docs & Demo](https://rain120.github.io/vuepress-plugin-awesome-gitalk/dist/)
+[Docs & Demo](https://rain120.github.io/vuepress-plugin-awesome-gitalk/dist/index.html)
 
 [NPM Package](https://www.npmjs.com/package/vuepress-plugin-awesome-gitalk)
 
