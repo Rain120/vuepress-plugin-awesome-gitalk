@@ -11,10 +11,12 @@ module.exports = {
           gitalk: {
             clientID: 'e743112631c04b57abf7',
             clientSecret: '2363ef1edc6b74a4675b9563b745b603ce6b943c',
-            repo: 'https://github.com/Rain120/vuepress-plugin-awesome-gitalk',
+            repo: 'vuepress-plugin-awesome-gitalk',
             owner: 'Rain120',
             admin: ['Rain120'],
             language: 'zh-CN',
+            // facebook-like distraction free mode
+            distractionFreeMode: true,
           }
         }
       ],
