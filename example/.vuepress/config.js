@@ -9,11 +9,11 @@ module.exports = {
           log: true,
           home: true,
           gitalk: {
-            clientID: 'f0d924a27274378ef2a3',
-            clientSecret: '41718ded9b3115824be3e162439ce43f736be645',
-            repo: 'https://rain120.github.io/study-notes/',
-            owner: 'rain120',
-            admin: ['rain120'],
+            clientID: 'e743112631c04b57abf7',
+            clientSecret: '2363ef1edc6b74a4675b9563b745b603ce6b943c',
+            repo: 'https://github.com/Rain120/vuepress-plugin-awesome-gitalk',
+            owner: 'Rain120',
+            admin: ['Rain120'],
             language: 'zh-CN',
           }
         }
@@ -21,6 +21,7 @@ module.exports = {
     ],
     base: '/vuepress-plugin-awesome-gitalk/dist/',
     title: 'Vuepress Plugin with Gitalk',
+    description: 'Vuepress Plugin with Gitalk',
     head: [
       [
         'mate',
@@ -28,7 +29,8 @@ module.exports = {
           name: 'Set-Cookie',
           content: 'HttpOnly;Secure;SameSite=None',
         }
-      ]
+      ],
+      ['link', { rel: 'icon', href: '../../shotscreen/talk.png' }],
     ],
     dest: 'dist/',
     configureWebpack: {
