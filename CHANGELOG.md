@@ -1,10 +1,12 @@
-<a name="0.0.2"></a>
-## 0.0.2 (2020-02-22)
+<a name="0.0.4"></a>
+## 0.0.4 (2020-02-25)
 
 
 ### Bug Fixes
 
 * gitalk not found ([6922d2d](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/commit/6922d2d))
+* ignorePaths bug; feat: update docs & docs side auto ([2a37aef](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/commit/2a37aef))
+* update docs README ([99b604f](https://github.com/Rain120/vuepress-plugin-awesome-gitalk/commit/99b604f))
 
 
 ### Features
