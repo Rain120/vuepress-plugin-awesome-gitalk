@@ -1,5 +1,6 @@
 const path = require('path')
 const gitalk = require('../../src/index')
+const { sidebarHelper } = require('./sidebarHelper')
 
 module.exports = {
     plugins: [
@@ -8,6 +9,7 @@ module.exports = {
           enable: true,
           log: true,
           home: false,
+          ignorePaths: ['/ignore/'],
           gitalk: {
             clientID: 'e743112631c04b57abf7',
             clientSecret: '2363ef1edc6b74a4675b9563b745b603ce6b943c',
@@ -56,6 +58,7 @@ module.exports = {
         }
       ],
       search: true,
-      sidebar: 'auto',
+      // sidebar: 'auto',
+      sidebar: sidebarHelper(),
     },
   }

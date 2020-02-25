@@ -20,10 +20,12 @@ export default {
     }
   },
   created() {
-    this.root = this.pluginConfig.root;
-    this.maxRetryCount = this.pluginConfig.maxRetryCount;
-    this.defaultCheckMinutes = this.pluginConfig.defaultCheckMinutes;
-    this.ignorePaths = this.pluginConfig.ignorePaths;
+    this.$nextTick(() => {
+      this.root = this.pluginConfig.root;
+      this.maxRetryCount = this.pluginConfig.maxRetryCount;
+      this.defaultCheckMinutes = this.pluginConfig.defaultCheckMinutes;
+      this.ignorePaths = this.pluginConfig.ignorePaths;
+    });
   },
   mounted() {
     if (!this.pluginConfig.enable) {
@@ -37,12 +39,7 @@ export default {
     });
     this.$router.afterEach((to, from) => {
       this.$nextTick(function() {
-        const shouldIgnore = !this.ignorePaths.some(path => new RegExp(path).test(to.path))
-        if (shouldIgnore) {
-          console.log(`😭😭😭 The path of ${to.path} should ignore`);
-          console.log(`😭😭😭 The ignore path ${JSON.stringify(this.ignorePaths)} includes ${to.path}`)
-        }
-        if (!shouldIgnore && to.path !== from.path) {
+        if (to.path !== from.path) {
           this.initGitalk(to);
         }
       });
@@ -51,7 +48,8 @@ export default {
   methods: {
     initGitalk(route) {
       let pageElem = document.querySelector('.page');
-      console.debug(this.$gitalkAppName + 'init ⏳📡');
+      console.log(this.$gitalkAppName + 'init ⏳📡');
+      const shouldIgnore = this.ignorePaths.some(path => path === route.path)
       if (!pageElem) {
         let retryCount = 0;
         // 500毫秒执行一次check(() => 解决setTimeout、setInterval内this调用失效的解决办法)
@@ -85,7 +83,17 @@ export default {
           }
         }, this.defaultCheckMinutes);
       } else {
-        this.loadGitalk(route, pageElem);
+        if (!shouldIgnore) {
+          this.loadGitalk(route, pageElem);
+        } else {
+          const commentsContainer = document.getElementById(this.root);
+          pageElem = document.querySelector('.page');
+          this.$nextTick(function() {
+            pageElem && commentsContainer && pageElem.removeChild(commentsContainer);
+          });
+          console.log(`😭😭😭 The path of ${route.path} should ignore`);
+          console.log(`😭😭😭 The ignore path ${JSON.stringify(this.ignorePaths)} includes ${route.path}`)
+        }
       }
     },
 

@@ -13,7 +13,7 @@ module.exports = {
   defaultCheckMinutes: 500,
   // 是否开启首页评论
   home: false,
-  // 关闭 Gitalk 评论页面, 正则匹配, eg: /docs/
+  // 关闭 Gitalk 评论页面, eg: /docs/
   ignorePaths: ['/'],
   // gitalk 配置
   gitalk: {
